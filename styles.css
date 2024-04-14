@@ -1,54 +1,94 @@
-body {
+/***************************COMMON STYLES************************/
+
+ul {
+  list-style-type: none;
+}
+.title-covers{
+  display: none;
+}
+
+#covers {
+  background-color: #1C1D20;
+  background-image: radial-gradient(circle at 40% 20%, rgba(237, 59, 68, 0.6) 0%, rgba(237, 59, 68, 0) 20%),
+      radial-gradient(circle at 10% 50%, rgba(237, 59, 68, 0.6) 0%, rgba(237, 59, 68, 0) 20%),
+      radial-gradient(circle at 80% 80%, rgba(237, 59, 68, 0.6) 0%, rgba(237, 59, 68, 0) 20%);
+  padding: 0px;
+  overflow: hidden;
+  height: 508px;
+}
+
+.content-covers {
+  padding-left: 0px;
+  padding-right: 0px;
+  transform: rotate(16deg);
+}
+
+.list-covers {
+  display: grid;
+  justify-content:stretch;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+}
+
+/*.list-covers>li {
+  grid-column: span 4; 
+}*/
+
+/*.list-covers>li:nth-child(10n+1) {
+  grid-column: 3/4;
+}
+/*.list-covers>li:nth-child(10n+6) {
+  grid-column: 9/4;
+}
+
+/*.list-covers>li:nth-child(3n+2) {
+  grid-column: span 4/-3;
+}*/
+
+.marquee-inner.show {
+  animation-name: marqueeLine;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+}
+
+@keyframes marqueeLine {
+  from {
+    transform: translateX(-20%);
+  }
+  
+  to {
+    transform: translateX(20%);
+  }
+}
+
+
+
+/******************************** MOBILE *************************/
+@media screen and (min-width: 320px) and (max-width: 767px) {
+
+
+  }
+
+/******************************** TABLET *************************/
+@media screen and (min-width: 768px)  {
+  #covers {
+    height: 960px;
     margin: 0;
-  }
-  
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-  }
-  .content {
-    position: relative;
-  }
-  .marquee {
-    position: absolute;
-    right: -800px;
-    left: 0;
-    overflow: hidden;
-    font-family: "Pridi", sans-serif;
-    font-weight: 600;
-    font-size: 34px;
-    text-transform: uppercase;
-  }
-  
-  .marquee__inner {
-     height: 100vh;
-     display: flex;
-     transform: rotate(16deg);
-  }
-  
-  .marquee__line {
-    background-color: #FFDC00;
-    flex-shrink: 0;
-    margin-right: 10px; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: calc(100% / 8); 
-    white-space: nowrap;
-    animation-name: marqueeLine;
-    animation-duration: 5s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-  }
-  
-  @keyframes marqueeLine {
-    from {
-      transform: translateX(-20%);
-    }
+}
     
-    to {
-      transform: translateX(-180%);
-    }
   }
+
+/******************************** DESKTOP *************************/
+@media screen and (min-width: 1440px) {
+  #covers {
+      margin: 0;
+}   
+
+
+  }
+
   
