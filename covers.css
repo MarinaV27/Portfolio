@@ -41,6 +41,7 @@ ul {
     animation-duration: 15s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
   }
   
   @keyframes marqueeLine {
